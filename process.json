@@ -1,0 +1,13 @@
+{
+	"name": "API",
+	"script": "index.js",
+	"env": {
+		"NODE_ENV": "prod"
+	},
+	"env_test": {
+		"NODE_ENV": "test"
+	},
+	"env_local": {
+		"NODE_ENV": "local"
+	}
+}
