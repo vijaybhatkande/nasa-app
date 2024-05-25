@@ -1,11 +1,11 @@
 const Pa = require("../models/pa.model");
-const axios = require("axios"); 
+const axios = require("axios");
 const { generateJWTToken } = require("../utility/jwt.token.auth");
 const {
   validateEmail,
   hashPassword,
   comparePasswords,
-} = require("../utility/helper"); 
+} = require("../utility/helper");
 var log4js = require("../config/logger");
 var logger = log4js.getLogger();
 
@@ -48,4 +48,27 @@ exports.SearchNasaImage = async (req, res) => {
   }
 };
 
- 
+// Get NASA Image Details.
+exports.getNasaImagesDetail = async (req, res) => {
+  console.log(req.body);
+  try {
+    logger.log("Inside getNasaImagesDetail Function");
+    const { nasa_id } = req.body;
+    if (!nasa_id) {
+      logger.log("Bad request. ");
+      return res.status(400).send({
+        message: "Bad request.",
+      });
+    }
+    const typesResponse = await Pa.getNasaImagesDetailModel(req.body);
+    res.send(typesResponse);
+  } catch (err) {
+    logger.log("Error: ", err);
+    return res.status(500).send({
+      status: 500,
+      message: err.message || "Error! Internal Server Error.",
+    });
+  }
+};
+
+

@@ -8,6 +8,7 @@ module.exports = (app) => {
   console.log("routes called....");
   router.post("/test", pa.test); 
   router.post("/SearchNasaImage", pa.SearchNasaImage);
+  router.post("/getNasaImagesDetail", pa.getNasaImagesDetail);
 
   //Router path
   app.use("/api/", router);

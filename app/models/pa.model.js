@@ -1,9 +1,9 @@
 // const sql = require("./db.js");
 const moment = require("moment");
 var log4js = require("../config/logger.js");
-var logger = log4js.getLogger(); 
+var logger = log4js.getLogger();
 const multer = require("multer");
-const fs = require("fs"); 
+const fs = require("fs");
 const axios = require("axios");
 const { comparePasswords, hashPassword } = require("../utility/helper.js");
 const { response, query } = require("express");
@@ -75,6 +75,29 @@ async function getNasaImage(searchParam) {
         year_end: searchParam.yearEndDate || "",
         media_type: searchParam.mediaType || "",
       },
+    });
+    return response?.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+
+exports.getNasaImagesDetailModel = async (payload) => {
+  console.log("get NASA Image Deatils.");
+  const nasaImageDetailResult = await getNasaImageDetail(payload);
+  console.log(nasaImageDetailResult.collection.items, "NASA Image Result...");
+  const imageData = nasaImageDetailResult.collection.items;
+  return {
+    status: 200,
+    data: imageData,
+  };
+};
+
+// API Call to NASA devloper Portal TO Get Image Details.
+async function getNasaImageDetail(searchParam) {
+  try {
+    const response = await axios.get(process.env.NASA_API_ENDPOINT + 'asset/' + searchParam.nasa_id, {
     });
     return response?.data;
   } catch (error) {
