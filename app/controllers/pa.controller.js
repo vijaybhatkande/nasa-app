@@ -31,12 +31,12 @@ exports.SearchNasaImage = async (req, res) => {
   try {
     logger.log("Inside SearchNasaImage Function");
     const { title, yearStartDate, yearEndDate, mediaType } = req.body;
-    if (!title || !yearStartDate || !yearEndDate || !mediaType) {
-      logger.log("Bad request. ");
-      return res.status(400).send({
-        message: "Bad request.",
-      });
-    }
+    // if (!title || !yearStartDate || !yearEndDate || !mediaType) {
+    //   logger.log("Bad request. ");
+    //   return res.status(400).send({
+    //     message: "Bad request.",
+    //   });
+    // }
     const typesResponse = await Pa.SearchNasaImage(req.body);
     res.send(typesResponse);
   } catch (err) {
