@@ -1,4 +1,3 @@
-
 require('dotenv').config({ path: '.env.'+(process.env.NODE_ENV) })
 const express = require("express");
 const cors = require("cors");
@@ -42,4 +41,6 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   logger.info(`Server is running on port ${PORT}.`);
+  console.log(`Server is running on port ${PORT}.`);
+  console.log(`http://localhost:8080/api/logIn`);
 });

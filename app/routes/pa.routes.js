@@ -4,11 +4,10 @@ const { verifyJWTToken } = require("../utility/jwt.token.auth");
 
 module.exports = (app) => {
   const pa = require("../controllers/pa.controller");
-  var router = require("express").Router();
-  console.log("routes called....");
+  var router = require("express").Router(); 
   router.post("/test", pa.test); 
-  router.post("/SearchNasaImage", pa.SearchNasaImage);
-  router.post("/getNasaImagesDetail", pa.getNasaImagesDetail);
+  router.post("/logIn", pa.LoginController);
+  router.post("/SearchNasaImage",verifyJWTToken, pa.SearchNasaImageController); 
 
   //Router path
   app.use("/api/", router);

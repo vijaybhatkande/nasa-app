@@ -5,8 +5,6 @@ var log_level=process.env.LOG_LEVEL || "INFO"
 var log_rotation=process.env.LOG_NUM || 5
 var log_max_size=process.env.LOG_MAX_SIZE || 10485760
 
-
-
 log4js.configure({
   appenders: {
     fileAppender: {
@@ -23,6 +21,5 @@ log4js.configure({
     }
   }
 });
-
 
 module.exports=log4js
