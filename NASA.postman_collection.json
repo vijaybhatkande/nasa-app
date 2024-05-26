@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "e57c98b9-c353-4e0d-b9d7-8bab5070b117",
+		"name": "NASA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35159501"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://images-api.nasa.gov/search?q=star&media_type=video&year_start=2018&year_end=2020&page=1&page_size=5",
+					"protocol": "https",
+					"host": [
+						"images-api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "star"
+						},
+						{
+							"key": "media_type",
+							"value": "video"
+						},
+						{
+							"key": "year_start",
+							"value": "2018"
+						},
+						{
+							"key": "year_end",
+							"value": "2020"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://images-api.nasa.gov/asset/20190530-SPITZRf-0001-Stars of Cephus",
+					"protocol": "https",
+					"host": [
+						"images-api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"asset",
+						"20190530-SPITZRf-0001-Stars of Cephus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://images-api.nasa.gov/metadata/Apollo 11 Overview",
+					"protocol": "https",
+					"host": [
+						"images-api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"metadata",
+						"Apollo 11 Overview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "album",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://images-api.nasa.gov/album/Apollo",
+					"protocol": "https",
+					"host": [
+						"images-api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"album",
+						"Apollo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "caption",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://images-api.nasa.gov/captions/Apollo 11 Overview",
+					"protocol": "https",
+					"host": [
+						"images-api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"captions",
+						"Apollo 11 Overview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NASA Filter API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJmaXJzdF9uYW1lIjoiVmlqYXkiLCJsYXN0X25hbWUiOiJCaGF0a2FuZGUiLCJ1c2VybmFtZSI6InZpamF5Iiwicm9sZV9pZCI6MSwicm9sZSI6ImFkbWluIiwiaXNfYWN0aXZlIjp0cnVlLCJjcmVhdGVkX2RhdGV0aW1lIjoiMjAyMy0wMS0wMVQwMDowMDowMFoiLCJpYXQiOjE3MTY3MTY4MDAsImV4cCI6MTcxNjcyNDAwMH0.fcaaRaFyjDFv2xfASUIqx5nlw3BYLu8_cVFNQKsZMGk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Apollo 11\",\r\n  \"mediaType\": \"image\",\r\n  \"yearStartDate\": \"2018\",\r\n  \"yearEndDate\": \"2021\", \r\n  \"page\": 2,\r\n  \"page_size\": 100,\r\n  \"cache\": true\r\n}\r\n\r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/SearchNasaImage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"SearchNasaImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"vijay\",\r\n    \"password\": \"password456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/logIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"logIn"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

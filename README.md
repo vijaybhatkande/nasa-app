@@ -28,27 +28,35 @@ Installation
 
     bash
 
-git clone https://github.com/vijaybhatkande/nasa-app.git
-cd nasa-app
+    git clone https://github.com/vijaybhatkande/nasa-app.git
+
+    cd nasa-app
 
 Install dependencies:
 
-bash
+    bash
 
-    npm install
+        npm install
 
-Usage
+    Usage
 
-    Start the server:
+        Start the server:
 
-    npm run dev
+        npm run dev
 
-    Open your browser and navigate to http://localhost:8080
+        Open your browser and navigate to http://localhost:8080
 
 API Endpoints
 
     GET /api/logIn: login to the application 
     GET /api/SearchNasaImage Fetches a list of pictures from NASA
+
+
+credentials
+
+    username: vijay
+    password: password456
+
 
 Contributing
 
