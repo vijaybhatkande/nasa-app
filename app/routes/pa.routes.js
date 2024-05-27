@@ -7,8 +7,8 @@ module.exports = (app) => {
   var router = require("express").Router(); 
   router.post("/test", pa.test); 
   router.post("/logIn", pa.LoginController);
-  router.post("/SearchNasaImage",verifyJWTToken, pa.SearchNasaImageController); 
-
+  router.post("/SearchNasaImage",verifyJWTToken, pa.SearchNasaImageController);  
+  
   //Router path
   app.use("/api/", router);
 };

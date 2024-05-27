@@ -9,8 +9,7 @@ Table of Contents
     Installation
     Usage
     API Endpoints
-    Contributing
-    License
+    Contributing 
 
 Features
 
@@ -38,7 +37,7 @@ Install dependencies:
 
         npm install
 
-    Usage
+Usage
 
         Start the server:
 
@@ -48,8 +47,8 @@ Install dependencies:
 
 API Endpoints
 
-    GET /api/logIn: login to the application 
-    GET /api/SearchNasaImage Fetches a list of pictures from NASA
+    POST /api/logIn: login to the application 
+    POST /api/SearchNasaImage Fetches a list of pictures from NASA
 
 
 credentials
